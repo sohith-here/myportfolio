@@ -152,3 +152,61 @@ function type() {
 }
 
 type()
+
+const skills = [
+  "HTML", "CSS", "JavaScript", "ReactJS", "NodeJS",
+  "Bootstrap", "Git", "Python", "MongoDB", "Express",
+  "PHP", "RESTAPI", "SQL", "Firebase"
+];
+
+const container = document.getElementById("sphere-container");
+const radius = 150;
+const tags = [];
+const total = skills.length;
+
+skills.forEach((skill, i) => {
+  const phi = Math.acos(-1 + (2 * i + 1) / total);
+  const theta = Math.PI * (1 + Math.sqrt(5)) * i;
+
+  const tag = document.createElement("div");
+  tag.className = "skill-tag";
+  tag.textContent = skill;
+  container.appendChild(tag);
+
+  tags.push({
+    element: tag,
+    phi,
+    theta
+  });
+});
+
+function render() {
+  const time = Date.now() * 0.001;
+
+  tags.forEach(tag => {
+    // Rotate angles over time
+    const theta = tag.theta + time * 0.4;
+
+    const x = radius * Math.sin(tag.phi) * Math.cos(theta);
+    const y = radius * Math.cos(tag.phi);
+    const z = radius * Math.sin(tag.phi) * Math.sin(theta);
+
+    const scale = 0.8 + (z / (2 * radius)); // z scaling
+    const transform = `
+      translate3d(${x}px, ${y}px, ${z}px)
+      scale(${scale})
+      rotateY(0deg) rotateX(0deg)
+    `;
+    tag.element.style.transform = transform;
+    tag.element.style.zIndex = Math.floor(z + 200); // depth layering
+    tag.element.style.opacity = 0.5 + scale / 1.5;   // fade further tags
+  });
+
+  requestAnimationFrame(render);
+}
+
+render();
+
+
+
+
