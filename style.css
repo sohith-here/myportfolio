@@ -386,9 +386,7 @@ html, body {
     height: auto;
   }
 
-  #sphere-container {
-    display: none; /* hide 3D sphere on tablets/smaller screens */
-  }
+  
 
   .projects-container {
     margin-left: auto;
@@ -444,7 +442,6 @@ html, body {
   .projects {
     padding: 40px 20px;
     height: auto;
-    top: 0;
   }
 
   .projects-container {
@@ -535,16 +532,23 @@ html, body {
 
   .about {
     width: 68% !important;
+    margin-top: 5px;
     margin-left: auto !important;
     margin-right: auto !important;
-    padding: 30px 20px !important;
-    height: auto !important;
+    padding: 1px 20px !important;
+    height: 115vh !important;
   }
 
-  .about-button,
-  .projectslink-button {
+  .about-button{
     position: relative !important;
     left: 0 !important;
+    top: -10px;
+    margin: 20px auto !important;
+    display: inline-block !important;
+  }
+  .projectslink-button {
+    position: relative !important;
+    left: 19 !important;
     top: -10px;
     margin: 20px auto !important;
     display: inline-block !important;
@@ -563,7 +567,38 @@ html, body {
   }
 
   #sphere-container {
-    display: none !important;
+  position: absolute;
+  top: 76%;
+  left: 37%;
+  transform: translate(-50%, -50%);
+  width: 80vw;
+  height: 80vw;
+  max-width: 400px;
+  max-height: 400px;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+.contact-section{
+      padding: 9px 39px;
+    margin-top: -68px;
+}
+.wrapper {
+    height: 141vh;
+            margin-top: -5px;
+}
+}
+@media (max-width: 768px) {
+  #sphere-container {
+    width: 280px;     /* ↓ adjust here if still too large */
+    height: 280px;
+  }
+}
+
+/* Small screen: phones */
+@media (max-width: 480px) {
+  #sphere-container {
+    width: 200px;     /* ↓ adjust here if still too large */
+    height: 200px;
   }
 }
 

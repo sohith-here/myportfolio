@@ -118,7 +118,7 @@ window.addEventListener('resize', () => {
 init();
 animate();
 
-const roles = ['a Developer.', 'a Tech Enthusiast.', 'Web3 Explorer.'];
+const roles = ['a Developer.', 'a Tech Enthusiast.', 'a Web3 Explorer.'];
 const typingElement = document.getElementById('typing');
 
 let roleIndex = 0;
