@@ -487,6 +487,58 @@ html, body {
 }
 
 
+/* Mobile Responsive Fixes */
+@media (max-width: 600px) {
+  .content {
+    padding-right: 20px !important;
+    padding-left: 20px !important;
+    max-width: 100% !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+  }
+
+  .social-icons {
+    position: fixed !important;
+    bottom: 20px !important;
+    right: 20px !important;
+    flex-direction: row !important;
+    gap: 12px !important;
+  }
+
+  .about {
+    width: 90% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 30px 20px !important;
+    height: auto !important;
+  }
+
+  .about-button,
+  .projectslink-button {
+    position: relative !important;
+    left: 0 !important;
+    margin: 20px auto !important;
+    display: inline-block !important;
+  }
+
+  .projects-container {
+    margin-left: 0 !important;
+    justify-content: center !important;
+    padding: 0 10px !important;
+  }
+
+  .project-card {
+    width: 100% !important;
+    max-width: 350px !important;
+    margin: 0 auto !important;
+  }
+
+  #sphere-container {
+    display: none !important;
+  }
+}
+
+
 
 
 
