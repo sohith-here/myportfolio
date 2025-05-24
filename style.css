@@ -310,9 +310,10 @@ html, body {
   padding: 0;               /* Remove extra padding */
 }
 .contact-section {
-  text-align: center;
-  padding: 80px 20px;
-  background-color: transparent /* very light teal background */
+    text-align: center;
+    padding: 33px 20px;
+    margin-top: -67px;
+    background-color: transparent /* very light teal background */;
 }
 
 .contact-section h2 {
