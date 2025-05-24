@@ -207,6 +207,22 @@ function render() {
 
 render();
 
+document.querySelectorAll('.view-more-btn').forEach(button => {
+  button.addEventListener('click', () => {
+    const card = button.closest('.project-card');
+    const moreText = card.querySelector('.more-text');
+    
+    if (moreText.style.display === 'none' || moreText.style.display === '') {
+      moreText.style.display = 'inline';  // or 'block' based on your layout
+      button.textContent = 'view less';
+    } else {
+      moreText.style.display = 'none';
+      button.textContent = 'view more';
+    }
+  });
+});
+
+
 
 
 

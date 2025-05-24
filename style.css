@@ -131,15 +131,16 @@ html, body {
   filter: drop-shadow(0 0 6px #00eaff);
 }
 .about {
-  height: 390px;
+  height: 57vh;
   width: 80%;
+  position: relative;
   padding: 80px 40px;
   background-color:rgb(33, 41, 41) ;/* ✅ Transparent background */
   backdrop-filter: blur(4px); 
   text-align: left;
   border-radius: 1%;
       margin-left: 100px;
-      margin-top: 102px;
+      margin-top: 57px;
 }
 
 .about h2 {
@@ -159,7 +160,8 @@ html, body {
   text-align: left;
 }
 .wrapper{
-  height: 86vh;
+  height: 87vh;
+  padding-top: 30px;
 }
 
 .section {
@@ -225,6 +227,147 @@ html, body {
   color: #0a0f17;
   box-shadow: 0 0 15px rgba(0, 234, 255, 0.5);
 }
+#projects{
+  top: 17px;
+  position: relative;
+}
+.projects {
+  padding: 80px 60px;
+  background-color: transparent;
+  text-align: left;
+  height: 90vh;
+  top: -70px;
+  position: relative;
+}
+
+.projects h2 {
+  font-size: 2.4rem;
+  color: #00eaff;
+  margin-bottom: 40px;
+  padding-left: 12px;
+}
+
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-left: 151px;
+  justify-content: flex-start;
+}
+
+.project-card {
+  background: rgba(0, 234, 255, 0.05);
+  backdrop-filter: blur(4px);
+  border: 1px solid #00eaff33;
+  border-radius: 16px;
+  padding: 24px;
+  width: 300px;
+  box-shadow: 0 0 12px rgba(0, 234, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 20px rgba(0, 234, 255, 0.4);
+}
+
+.project-card h3 {
+  font-size: 1.5rem;
+  color: #f8fefe;
+  margin-bottom: 12px;
+}
+
+.project-card p {
+  font-size: 1rem;
+  color: #b0cde0;
+  margin-bottom: 16px;
+}
+
+.project-card a {
+  font-weight: bold;
+  text-decoration: none;
+  color: #00eaff;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s;
+}
+
+.project-card a:hover {
+  border-color: #00eaff;
+}
+.projectslink-button {
+  display: inline-block;
+  padding: 12px 28px;
+  margin: 20px;
+      left: 21px;
+    position: absolute;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #00eaff;
+  background: transparent;
+  border: 2px solid #00eaff;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.hidden {
+  display: none;
+  background: transparent;
+}
+.view-more-btn {
+  background: transparent;  /* Makes button background see-through */
+  border: none;             /* Removes the default border */
+  color: #00eaff;           /* Optional: button text color (blue here) */
+  cursor: pointer;          /* Changes cursor on hover to pointer */
+  font-size: 16px;          /* Adjust font size if needed */
+  padding: 0;               /* Remove extra padding */
+}
+.contact-section {
+  text-align: center;
+  padding: 80px 20px;
+  background-color: transparent /* very light teal background */
+}
+
+.contact-section h2 {
+  font-size: 32px;
+  margin-bottom: 16px;
+  color:  #00eaff; /* dark teal */
+}
+
+.contact-section p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  color:  #00eaff; /* slightly muted teal */
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.say-hello-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  font-size: 16px;
+  color: #14b8a6; /* teal */
+  border: 2px solid #14b8a6;
+  background-color: transparent;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.say-hello-btn:hover {
+  background-color: #14b8a6;
+  color: white;
+}
+.site-footer {
+  background-color:  #003b5b; /* dark teal */
+  color: #ffffff;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 14px;
+}
+
+
 
 
 
