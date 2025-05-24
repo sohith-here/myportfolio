@@ -639,8 +639,37 @@ html, body {
 }
 
 @media (max-width: 480px) {
+      .about-button {
+        position: relative !important;
+        left: 7px !important;
+        top: -14px;
+        margin: 20px auto !important;
+        display: inline-block !important;
+        padding: 12px 28px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #00eaff;
+        background: transparent;
+        border: 2px solid #00eaff;
+        border-radius: 10px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+        .about {
+        width: 72% !important;
+        margin-top: 5px;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding: 1px 20px !important;
+        height: 115vh !important;
+    }
+    .wrapper{ height: 115vh;
+        margin-top: 28px;
+    }
   .content h1 {
     font-size: 1.8rem;
+    margin-left: 9px;
   }
 
   .content h4 {
@@ -651,11 +680,50 @@ html, body {
 
   .content p {
     font-size: 0.9rem;
+    left: 18px;
   }
+      .social-icons {
+        position: relative !important;
+        left: 356px;
+        top: 4px;
+        flex-direction: column !important;
+        gap: 12px !important;
+        display: flex;
+    }
+        .projectslink-button {
+        position: relative !important;
+        left: 45px !important;
+        top: -10px;
+        margin: 20px auto !important;
+        display: inline-block !important;
+    }
+
+         .projects-container {
+        margin-left: 0 !important;
+        justify-content: center !important;
+        padding: 0 10px !important;
+        display: flex
+;
+        gap: 15px;
+    }
+    #projects {
+        top: 55px;
+        position: relative;
+        height: 1391px;
+    }
+       .projects{
+             padding: 71px 20px;
+        height: 1315px;
+    }
+          .contact-section {
+        padding: 9px 39px;
+        margin-top: -41px;
+    }
 
   .project-card {
-    width: 100%;
-    padding: 16px;
+    width: 79% !important;
+    max-width: 350px !important;
+    margin: 0 auto !important;
   }
 
   .say-hello-btn {
@@ -671,22 +739,80 @@ html, body {
     font-size: 16px;
   }
 
-  #sphere-container {
-    width: 200px;
-    height: 200px;
-  }
+      #sphere-container {
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        top: 75%;
+        left: 39%;
+        transform: translate(-50%, -50%);
+        max-width: 327px;
+        max-height: 400px;
+        perspective: 1300px;
+        transform-style: preserve-3d;
+    }
 }
 
 /* Ultra-small phones (e.g. 320px to 360px wide) */
 @media (max-width: 360px) {
-  .content h1 {
-    font-size: 1.6rem;
-  }
+        .content{
+          left: -80px;
+        padding-right: 20px !important;
+        padding-left: 20px !important;
+        max-width: 100% !important;
+        text-align: center !important;
+        margin: 0 auto !important;
+    }
+     .content h1 {
+        position: relative;
+        font-size: 1.6rem;
+        left: -1px;
+    }
 
-  .content h4,
-  .content p {
+  .content h4{
     font-size: 0.8rem;
   }
+  .content p {
+    font-size: 0.8rem;
+    left: 24px;
+  }
+      .about-button {
+        position: relative !important;
+        left: 14px !important;
+        top: -14px;
+        margin: 20px auto !important;
+        display: inline-block !important;
+        padding: 12px 28px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #00eaff;
+        background: transparent;
+        border: 2px solid #00eaff;
+        border-radius: 10px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+    .projectslink-button {
+        position: relative !important;
+        left: 43px !important;
+        top: -10px;
+        margin: 20px auto !important;
+        display: inline-block !important;
+    }
+        .about h2 {
+        font-size: 2rem;
+        position: relative;
+        left: -11px;
+    }
+          .about{
+              width: 89% !important;
+        margin-top: 5px;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding: 1px 20px !important;
+        height: 120vh !important;
+    }
 
   .project-card {
     width: 95% !important;
@@ -697,10 +823,29 @@ html, body {
   }
 
   #sphere-container {
-            margin-top: 56px;
+            margin-top: -3px;
     width: 160px;
     height: 160px;
   }
+          .project-card {
+        left: 11px;
+        position: relative;
+        flex: 0 0 48%;
+        box-sizing:unset;
+    }
+        .projects-container {
+        margin-left: -36px !important;
+        justify-content: center !important;
+        padding: 0 10px !important;
+        display: flex
+;
+        gap: 15px;
+        width: 355px;
+    }
+        .projects {
+        padding: 71px 20px;
+        height: 2148px;
+    }
 }
 
 
