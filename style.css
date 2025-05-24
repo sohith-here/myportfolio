@@ -52,16 +52,6 @@ html, body {
   left: 2px;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .content {
-    padding-left: 20px;
-    padding-right: 20px;
-    text-align: center;
-    max-width: 90%;
-    margin: 0 auto;
-  }
-}
 .typing {
   border-right: 2px solid #ff4ec8;
   white-space: nowrap;
@@ -78,10 +68,7 @@ html, body {
   font-weight: normal;
 }
 
-@keyframes blink {
-  0%, 100% { border-color: transparent; }
-  50% { border-color: #ff4ec8; }
-}
+
 
 .page-container {
   position: relative; /* Key: makes .resume-icon absolute to this */
@@ -368,6 +355,136 @@ html, body {
 }
 
 
+/* Responsive tweaks */
+@media (max-width: 1024px) {
+  .content {
+    padding-right: 40px; /* reduce huge right padding */
+    max-width: 90%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .social-icons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    flex-direction: row;
+    gap: 10px;
+    background: rgba(0, 234, 255, 0.1);
+    padding: 8px 12px;
+    border-radius: 12px;
+    box-shadow: 0 0 8px #00eaff88;
+  }
+
+  .about {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    padding: 40px 20px;
+    height: auto;
+  }
+
+  #sphere-container {
+    display: none; /* hide 3D sphere on tablets/smaller screens */
+  }
+
+  .projects-container {
+    margin-left: auto;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .content h1 {
+    font-size: 2.4rem;
+  }
+
+  .content h4 {
+    font-size: 1rem;
+  }
+
+  .content p {
+    font-size: 1rem;
+  }
+
+  .about h2 {
+    font-size: 2rem;
+  }
+
+  .about p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .projects {
+    padding: 40px 20px;
+    height: auto;
+    top: 0;
+  }
+
+  .projects-container {
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0;
+    gap: 20px;
+  }
+
+  .project-card {
+    width: 90%;
+  }
+
+  .about-button,
+  .projectslink-button {
+    position: static;
+    margin: 20px auto;
+    display: inline-block;
+  }
+
+  .social-icons a img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .resume-icon {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .content h1 {
+    font-size: 1.8rem;
+  }
+
+  .content h4 {
+    font-size: 0.9rem;
+  }
+
+  .content p {
+    font-size: 0.9rem;
+  }
+
+  .project-card {
+    width: 100%;
+    padding: 16px;
+  }
+
+  .say-hello-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .contact-section h2 {
+    font-size: 24px;
+  }
+
+  .contact-section p {
+    font-size: 16px;
+  }
+}
 
 
 
