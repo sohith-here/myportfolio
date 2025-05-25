@@ -9,6 +9,17 @@ html, body {
   overflow-y: auto; /* allow vertical scrolling */
 }
 
+.section.intro {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* or center if preferred */
+  height: 100vh; /* full screen height */
+  width: 100vw;  /* full screen width */
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+  padding: 0;
+}
 
 #triangle-canvas {
   position: fixed;
@@ -24,10 +35,10 @@ html, body {
 .content {
   position: relative;
   z-index: 1;
-  padding-right: 1021px;
   padding-bottom: 50px;
-  max-width: 600px;
+  width: 100%;
   text-align: left;
+  margin-left: 4%;
 }
 
 /* Text Styling */
@@ -49,7 +60,6 @@ html, body {
   margin-top: 0.5em;
   color: #ff4ec8;
   position: relative;
-  left: 2px;
 }
 
 .typing {
@@ -95,15 +105,21 @@ html, body {
   color: #0a0f17;
   transform: scale(1.05);
 }
-.social-icons {
-  position: absolute;
-  bottom: -268px;
-    right: -117px;
-  display: flex;
-  flex-direction: column; 
-  gap: 15px;
-  z-index: 10;
+.social-icons{
+    position: absolute;
+    right: 20px;
+    transform: translateY(-50%);
+    display: flex
+;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 15px;
+    max-width: 40px;
+    z-index: 10;
+    margin: 0;
+    margin-top: 27vh;
 }
+
 
 .social-icons a img {
   width: 28px;
@@ -117,64 +133,93 @@ html, body {
   transform: scale(1.2);
   filter: drop-shadow(0 0 6px #00eaff);
 }
-.about {
-  height: 57vh;
-  width: 80%;
-  position: relative;
-  padding: 80px 40px;
-  background-color:rgb(33, 41, 41) ;/* ✅ Transparent background */
-  backdrop-filter: blur(4px); 
-  text-align: left;
-  border-radius: 1%;
-      margin-left: 100px;
-      margin-top: 57px;
-}
 
-.about h2 {
-  align-self: flex-start;
-  font-size: 2.4rem;
-  color: #00eaff;
-  margin-bottom: 16px;
-  padding-left: 12px;
-}
 
-.about p {
-  align-self: flex-start;
-  color: #b0cde0;
-  font-size: 1.15rem;
-  line-height: 1.8;
-  max-width: 681px;
-  text-align: left;
-}
-.wrapper{
-  height: 87vh;
-  padding-top: 30px;
-}
-
-.section {
-  height: 100vh;
-  width: 100%;
+/*2nd Section*/
+.outer {
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+  min-height: 100vh;
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-  padding: 20px;
-  box-sizing: border-box;
+  flex-direction: column; /* <--- prevent sphere overflow */
 }
 
-.intro {
-  z-index: 2;
+.about {
+  width: 97%;
+  min-height: 70%; /* instead of fixed height */
+  max-width: 1200px;
+  display: flex;
+  transform: translateX(-8px);
+  flex-wrap: wrap;
+  gap: 2rem;
+  background-color: rgb(33, 41, 41);
+  backdrop-filter: blur(4px);
+  border-radius: 1%;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+  justify-content: center; /* centers when stacked */
+  align-items: center;  
+  margin: 0 auto;   /* vertically center stacked */
 }
+
+.about-one {
+  flex: 1 1 300px; /* Grows and shrinks, min 300px */
+  min-width: 280px;
+  color: #b0cde0;
+}
+
+.about h2 {
+  font-size: 2rem;
+  color: #00eaff;
+}
+
+.about p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  text-align: left;
+  max-width: 100%;
+}
+
+.projectslink-button {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.6rem
+9.6px
+ 1.2rem;
+    color: #30e7e6e8;
+    font-weight: bold;
+    border: #00eaff solid;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.projectslink-button:hover {
+  transform: scale(1.05);
+}
+
+.sphere {
+  flex: 1 1 300px;
+  min-width: 280px;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  transform: translateX(-39px);
+}
+
 #sphere-container {
-  position: absolute;
-  top: 50%;
-  left: 75%;
-  transform: translate(-50%, -50%);
-  width: 400px;
-  height: 400px;
-  perspective: 1000px;
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 1 / 1;
   transform-style: preserve-3d;
+  perspective: 1000px;
 }
+
 
 .skill-tag {
   position: absolute;
@@ -193,20 +238,19 @@ html, body {
   transform-origin: center center;
 }
 .about-button {
-  display: inline-block;
-  padding: 12px 28px;
-  margin: 20px;
-      left: -15px;
+    padding: 12px 28px;
+    margin: 20px;
+    left: -17px;
     position: absolute;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #00eaff;
-  background: transparent;
-  border: 2px solid #00eaff;
-  border-radius: 10px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #00eaff;
+    background: transparent;
+    border: 2px solid #00eaff;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .about-button:hover {
@@ -214,42 +258,55 @@ html, body {
   color: #0a0f17;
   box-shadow: 0 0 15px rgba(0, 234, 255, 0.5);
 }
-#projects{
-  top: 17px;
+
+/*3rd section*/
+#projects {
+  width: 100vw;
+  min-height: 100vh;
   position: relative;
+  padding: 5vh 4vw;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  padding-top: 5vh;
 }
+
 .projects {
-  padding: 80px 60px;
+  width: 100%;
+  max-width: 1400px;
+  padding: 2vh 2vw;
   background-color: transparent;
-  text-align: left;
-  height: 90vh;
-  top: -70px;
-  position: relative;
+  text-align: center;
 }
 
 .projects h2 {
   font-size: 2.4rem;
   color: #00eaff;
-  margin-bottom: 40px;
-  padding-left: 12px;
+  margin-bottom: 2rem;
 }
 
 .projects-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
-  margin-left: 151px;
-  justify-content: flex-start;
+  justify-content: center;
+  gap: 2rem;
 }
 
 .project-card {
   background: rgba(0, 234, 255, 0.05);
   backdrop-filter: blur(4px);
   border: 1px solid #00eaff33;
-  border-radius: 16px;
-  padding: 24px;
-  width: 300px;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 300px;
+  flex: 1 1 250px;
   box-shadow: 0 0 12px rgba(0, 234, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -261,13 +318,13 @@ html, body {
 .project-card h3 {
   font-size: 1.5rem;
   color: #f8fefe;
-  margin-bottom: 12px;
+  margin-bottom: 1rem;
 }
 
 .project-card p {
   font-size: 1rem;
   color: #b0cde0;
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
 }
 
 .project-card a {
@@ -281,34 +338,20 @@ html, body {
 .project-card a:hover {
   border-color: #00eaff;
 }
-.projectslink-button {
-  display: inline-block;
-  padding: 12px 28px;
-  margin: 20px;
-      left: 21px;
-    position: absolute;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #00eaff;
-  background: transparent;
-  border: 2px solid #00eaff;
-  border-radius: 10px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
+
 .hidden {
   display: none;
-  background: transparent;
 }
+
 .view-more-btn {
-  background: transparent;  /* Makes button background see-through */
-  border: none;             /* Removes the default border */
-  color: #00eaff;           /* Optional: button text color (blue here) */
-  cursor: pointer;          /* Changes cursor on hover to pointer */
-  font-size: 16px;          /* Adjust font size if needed */
-  padding: 0;               /* Remove extra padding */
+  background: transparent;
+  border: none;
+  color: #00eaff;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0;
 }
+
 .contact-section {
     text-align: center;
     padding: 33px 20px;
@@ -355,10 +398,10 @@ html, body {
   font-size: 14px;
 }
 
-
+/*
 /* Responsive tweaks */
 @media (max-width: 1024px) {
-  .content {
+ /* .content {
     padding-right: 40px;
     max-width: 90%;
             right: 252px;
@@ -411,11 +454,11 @@ html, body {
   .projects-container {
     margin-left: auto;
     justify-content: center;
-  }
+  }*/
 }
 
 @media (max-width: 768px) {
-  .content {
+  /*.content {
     top: 154px;
     right: 179px;
   }
@@ -470,7 +513,7 @@ html, body {
         text-align: center;
         margin-top: -104px;
         padding: 38px 20px;
-        background-color: transparent /* very light teal background */;
+        background-color: transparent; 
     }
 
   .about h2 {
@@ -545,11 +588,11 @@ html, body {
         .wrapper {
         height: 833px;
         padding-top: 30px;
-    }
+    }*/
 }
 
 @media (max-width: 600px) {
-  .content {
+ /* .content {
     left: -139px;
     padding-right: 20px !important;
     padding-left: 20px !important;
@@ -636,10 +679,133 @@ html, body {
   .wrapper {
     height: 141vh;
     margin-top: 28px;
-  }
+  }*/
 }
 
 @media (max-width: 480px) {
+     /* .about-button {
+        position: relative !important;
+        left: 7px !important;
+        top: -14px;
+        margin: 20px auto !important;
+        display: inline-block !important;
+        padding: 12px 28px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #00eaff;
+        background: transparent;
+        border: 2px solid #00eaff;
+        border-radius: 10px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+        .about {
+        width: 72% !important;
+        margin-top: 5px;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding: 1px 20px !important;
+        height: 115vh !important;
+    }
+    .wrapper{ height: 115vh;
+        margin-top: 28px;
+    }
+  .content h1 {
+    font-size: 1.8rem;
+    margin-left: 9px;
+  }
+
+  .content h4 {
+    font-size: 0.9rem;
+    left: -14px;
+    position: relative;
+  }
+
+  .content p {
+    font-size: 0.9rem;
+    left: 18px;
+  }
+      .social-icons {
+        position: relative !important;
+        left: 356px;
+        top: 4px;
+        flex-direction: column !important;
+        gap: 12px !important;
+        display: flex;
+    }
+        .projectslink-button {
+        position: relative !important;
+        left: 45px !important;
+        top: -10px;
+        margin: 20px auto !important;
+        display: inline-block !important;
+    }
+
+         .projects-container {
+        margin-left: 0 !important;
+        justify-content: center !important;
+        padding: 0 10px !important;
+        display: flex
+;
+        gap: 15px;
+    }
+    #projects {
+        top: 55px;
+        position: relative;
+        height: 1391px;
+    }
+       .projects{
+             padding: 71px 20px;
+        height: 1315px;
+    }
+          .contact-section {
+        padding: 9px 39px;
+        margin-top: -41px;
+    }
+
+  .project-card {
+    width: 79% !important;
+    max-width: 350px !important;
+    margin: 0 auto !important;
+  }
+
+  .say-hello-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .contact-section h2 {
+    font-size: 24px;
+  }
+
+  .contact-section p {
+    font-size: 16px;
+  }
+
+      #sphere-container {
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        top: 75%;
+        left: 39%;
+        transform: translate(-50%, -50%);
+        max-width: 327px;
+        max-height: 400px;
+        perspective: 1300px;
+        transform-style: preserve-3d;
+    }*/
+}
+
+@media (max-width: 411px) {
+     /* .content {
+        left: -93px;
+        padding-right: 20px !important;
+        padding-left: 20px !important;
+        max-width: 100% !important;
+        text-align: center !important;
+        margin: 0 auto !important;
+    }
       .about-button {
         position: relative !important;
         left: 7px !important;
@@ -751,12 +917,13 @@ html, body {
         max-height: 400px;
         perspective: 1300px;
         transform-style: preserve-3d;
-    }
+    }*/
 }
+
 
 /* Ultra-small phones (e.g. 320px to 360px wide) */
 @media (max-width: 360px) {
-        .content{
+      /*  .content{
           left: -80px;
         padding-right: 20px !important;
         padding-left: 20px !important;
@@ -846,7 +1013,7 @@ html, body {
         .projects {
         padding: 71px 20px;
         height: 2148px;
-    }
+    }*/
 }
 
 
