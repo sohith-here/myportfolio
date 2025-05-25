@@ -33,18 +33,18 @@ html, body {
 }
 
 .content {
-  position: relative;
-  z-index: 1;
-  padding-bottom: 50px;
-  width: 100%;
-  text-align: left;
-  margin-left: 4%;
+    position: relative;
+    z-index: 1;
+    padding-bottom: 3%;
+    width: 100%;
+    text-align: left;
+    margin-left: 4%;
 }
 
 /* Text Styling */
 .content h4 {
   font-size: 1.2rem;
-  margin: 0px 0px -1.8em 0;/* Small bottom space */
+  margin: 0px 0px -1.8em 1px;/* Small bottom space */
   color: #ff4ec8;
 }
 
@@ -152,7 +152,7 @@ html, body {
   min-height: 70%; /* instead of fixed height */
   max-width: 1200px;
   display: flex;
-  transform: translateX(-8px);
+  transform: translateX(-5px);
   flex-wrap: wrap;
   gap: 2rem;
   background-color: rgb(33, 41, 41);
@@ -184,17 +184,17 @@ html, body {
 }
 
 .projectslink-button {
-    display: inline-block;
+display: inline-block;
     margin-top: 1rem;
-    padding: 0.6rem
-9.6px
- 1.2rem;
-    color: #30e7e6e8;
-    font-weight: bold;
-    border: #00eaff solid;
-    border-radius: 6px;
+    padding: 0.6rem 1.2rem;
+    color: #00eaff;
+    font-weight: 600;
+    border: 2px solid #00eaff;
+    border-radius: 8px;
     text-decoration: none;
-    transition: transform 0.2s ease;
+    background-color: transparent;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
 }
 
 .projectslink-button:hover {
