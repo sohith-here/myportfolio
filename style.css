@@ -61,6 +61,7 @@ html, body {
   margin-top: 0.5em;
   color: #ff4ec8;
   position: relative;
+   padding-left: 0.5rem;
 }
 
 .typing {
